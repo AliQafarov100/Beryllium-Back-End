@@ -1,0 +1,121 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="slider">
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+
+                    @{
+                        var indicator = 0;
+                        var slayd = 0;
+
+                        foreach (Slider sliders in Model.Sliders)
+                        {
+                            slayd++;
+                            var itemIndicator = indicator++ == 0 ? "active" : "";
+
+                            <button type = "button" data-bs-target = "#carouselExampleIndicators" data-bs-slide-to = "@(indicator -1)" class="@itemIndicator" aria-current="true" aria-label="Slide @slayd"></button>
+                        }
+                    }
+                </div>
+                <div class="carousel-inner">
+                    @{
+                        var i = 0;
+
+                        foreach (Slider slider in Model.Sliders)
+                        {
+                            var itemClass = i++ == 0 ? "carousel-item active" : "carousel-item";
+                            <div class="@itemClass">
+                                <img src="/assets/Image/Slider/@slider.Image" class="d-block" alt="...">
+                            </div>
+                        }
+                    }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="carousel">
+        <div class="container">
+            <div class="row">
+                <div class="title text-center mt-5 col-md-12 col-sm-12 col-12">
+                    <h1>@layoutservice.GetDatas().Result.FirstOrDefault(i => i.Key == "CarouselTitle").Value</h1>
+                    <p class="w-75 text-center">@layoutservice.GetDatas().Result.FirstOrDefault(i => i.Key == "CarouselSubTitle").Value</p>
+                </div>
+                <div class="owl-carousel owl-theme mt-3">
+                    @foreach (Carousel carousel in Model.Carousels)
+                    {
+                        <div class="item">
+                            <img src="/assets/Image/Carousel/@carousel.Image" alt="">
+                            <h4 class="mt-3">@carousel.Lacation</h4>
+                            <p>@carousel.Town</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="news-section" class="py-5">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="news col-lg-6 col-md-12 col-sm-12">
+                    <strong>News</strong>
+                    @foreach (News news in Model.News)
+                    {
+                        <div class="news-today">
+                            <p><a href="" class="date">@news.Date</a></p>
+                            <h4><a href="">@news.TitleNews</a> </h4>
+                            <p><a href="">@news.DescriptionNews</a></p>
+                        </div>
+                    }
+                </div>
+                <div class="testimonial col-lg-6 col-md-12 col-sm-12">
+                    <div class="testimanials">
+                        <strong>Testimonials</strong>
+                        <p class="comment">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.“</p>
+                        <p>— John Doe Dueller</p>
+                    </div>
+                    <div class="testimanials mt-5">
+                        <p class="comment">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.“</p>
+                        <p>— John Doe Dueller</p>
+                    </div>
+                </div>
+                <div class="btn btn-secondary mt-5 button col-7 col-lg-3">MORE NEWS</div>
+            </div>
+        </div>
+    </section>
+    <section id="architect" class="py-5">
+        <div class="container mt-4">
+            <div class="row">
+                @foreach (Work work in Model.Works)
+                {
+                    <div class="box col-lg-4 d-flex justify-content-between">
+                        <div class="icon">
+                            <i class="@work.WorkIcon"></i>
+                        </div>
+                        <div class="text ms-4">
+                            <strong>@work.WorkName</strong>
+                            <p>@work.WorkDescription</p>
+                            <a href="">Lean More</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+}
+
+nav .container .logo h5 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav .container .service {
+  height: 70px;
+}
+
+nav .container .service ul li {
+  list-style: none;
+  margin: 5px;
+}
+
+nav .container .service ul li .active {
+  color: black !important;
+}
+
+nav .container .service ul li a {
+  text-decoration: none;
+  color: #cccccc;
+  transition: 1s;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+nav .container .service ul li a:hover {
+  color: black;
+  transition: 1s;
+}
+
+#carousel .title h1 {
+  color: #4d4d4d;
+  font-weight: 300;
+}
+
+#carousel .title p {
+  margin: 0 auto;
+  color: #898989;
+}
+
+#carousel .owl-carousel img {
+  height: 200px;
+}
+
+#carousel .owl-carousel p {
+  color: #898989;
+}
+
+#news-section {
+  border-bottom: 1px solid #52D681;
+}
+
+#news-section strong {
+  font-weight: normal;
+  font-size: 25px;
+}
+
+#news-section a {
+  text-decoration: none;
+  color: black;
+}
+
+#news-section .news-today {
+  border-bottom: 1px solid #52D681;
+}
+
+#news-section .news-today h4 {
+  transition: 1s;
+  font-weight: normal;
+}
+
+#news-section .news-today h4 a {
+  color: #52D681;
+  transition: 1s;
+}
+
+#news-section .news-today h4 a:hover {
+  color: black;
+  transition: 1s;
+}
+
+#news-section .news-today .date {
+  color: #898989;
+}
+
+#news-section .testimanials .comment {
+  font-style: italic;
+}
+
+#news-section .button {
+  background-color: #52D681;
+  color: #2f9051;
+  border: none;
+  transition: .5s;
+}
+
+#news-section .button:hover {
+  color: white;
+  transition: .5s;
+}
+
+#architect i {
+  font-size: 25px;
+  color: #cccccc;
+}
+
+#architect .box {
+  margin-top: 25px;
+}
+
+#architect .text strong {
+  font-size: 13px;
+}
+
+#architect .text a {
+  text-decoration: none;
+  color: #2f9051;
+  transition: .5s;
+}
+
+#architect .text a:hover {
+  color: black;
+  transition: .5s;
+}
+
+#foot {
+  background-color: #262626;
+}
+
+#foot .container .footer-box strong {
+  font-size: 25px;
+  font-weight: normal;
+  color: white;
+}
+
+#foot .container .footer-box p {
+  font-size: 12px;
+  color: #777;
+}
+
+#foot .container .footer-box ul {
+  padding-left: 0;
+}
+
+#foot .container .footer-box ul li {
+  list-style: none;
+}
+
+#foot .container .footer-box ul li a {
+  text-decoration: none;
+  color: #52D681;
+  font-size: 12px;
+  transition: .5s;
+}
+
+#foot .container .footer-box ul li a:hover {
+  color: white;
+  transition: .5s;
+}
+
+#foot .container .footer-box input {
+  height: 50px;
+  border: none;
+}
+
+#end {
+  background-color: #1a1a1a;
+}
+
+#end p {
+  color: #777;
+  font-size: 12px;
+}
+
+#end a {
+  text-decoration: none;
+  color: #52D681;
+  transition: .5s;
+  font-size: 12px;
+}
+
+#end a:hover {
+  transition: .5s;
+  color: white;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+  z-index: 5;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav ul {
+  padding-left: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+body {
+  position: relative;
+}
+
+body .arrow {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  right: 20px;
+  position: fixed;
+  bottom: 20px;
+  text-align: center;
+  transition: 1s;
+  display: table-cell;
+  border-radius: 5px;
+}
+
+body .arrow i {
+  color: white;
+  font-size: 12px;
+  margin-top: 19px;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+  .container .service {
+    display: none;
+  }
+  .container .bar {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .container img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 60%;
+  }
+  .container .bar {
+    display: none;
+  }
+  .container .service {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .container img {
+    width: 100%;
+    height: 500px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

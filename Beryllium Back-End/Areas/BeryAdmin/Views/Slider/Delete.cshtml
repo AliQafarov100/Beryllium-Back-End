@@ -1,0 +1,16 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Delete";
+}
+<div>
+    <div>
+        <p>Image:</p>
+        <img src="/assets/Image/Slider/@Model.Image" style="width: 150px; height: 90px;" />
+    </div>
+</div>
+
+<form method="post">
+    <div class="mt-3">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>

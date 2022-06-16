@@ -1,0 +1,81 @@
+﻿@model List<News>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Inverse table</h4>
+            <a asp-controller="News" asp-action="Create" class="btn btn-danger">Create</a>
+            <div class="table-responsive pt-3">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                News Title
+                            </th>
+                            <th>
+                                News SubTitle
+                            </th>
+                            <th>
+                                News Date
+                            </th>
+                            <th>
+                                Setting
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (News news in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @news.Id
+                                </td>
+                                <td>
+                                    @news.TitleNews
+                                </td>
+                                <td>
+                                    @if (news.DescriptionNews.Length >= 30)
+                                    {
+                                        @(news.DescriptionNews.Substring(0,30) + "...".ToString());
+                                    }
+                                    else
+                                    {
+                                        @news.DescriptionNews
+                                    }
+                                </td>
+                                <td>
+                                    @news.Date
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <div>
+                                            <a class="btn btn-primary" asp-controller="News" asp-action="Detail" asp-route-id="@news.Id">
+                                                <i class="mdi mdi-details"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-success" asp-controller="News" asp-action="Edit" asp-route-id="@news.Id">
+                                                <i class="mdi mdi-tooltip-edit"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-danger" asp-controller="News" asp-action="Delete" asp-route-id="@news.Id">
+                                                <i class="mdi mdi-delete-forever"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

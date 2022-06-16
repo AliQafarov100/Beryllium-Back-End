@@ -1,0 +1,26 @@
+﻿@model News
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div>
+    <div>
+        <p>News Title:</p>
+        <h4>@Model.TitleNews</h4>
+    </div>
+    <div>
+        <p>News Description:</p>
+        <h4>@Model.DescriptionNews</h4>
+    </div>
+    <div>
+        <p>News Date:</p>
+        <h4>@Model.Date</h4>
+    </div>
+</div>
+
+<form method="post">
+    <div class="mt-3">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>
+
